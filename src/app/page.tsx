@@ -1,23 +1,23 @@
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import TechStack from "@/components/TechStack";
-import Projects from "@/components/Projects";
-import Timeline from "@/components/Timeline";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import NotionHeader from "@/components/NotionHeader";
+import NotionCover from "@/components/NotionCover";
+import NotionProperties from "@/components/NotionProperties";
+import NotionProjectsDatabase from "@/components/NotionProjectsDatabase";
+import NotionSkillsMatrix from "@/components/NotionSkillsMatrix";
+import NotionExperience from "@/components/NotionExperience";
+import NotionContact from "@/components/NotionContact";
+import NotionFooter from "@/components/NotionFooter";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-bg text-fg">
-      <Header />
-      <Hero />
-      <About />
-      <TechStack />
-      <Projects />
-      <Timeline />
-      <Contact />
-      <Footer />
+    <main className="min-h-screen bg-[var(--notion-bg)] text-[var(--notion-text)] antialiased transition-colors duration-200">
+      <NotionHeader />
+      <NotionCover />
+      <NotionProperties />
+      <NotionProjectsDatabase />
+      <NotionSkillsMatrix />
+      <NotionExperience />
+      <NotionContact />
+      <NotionFooter />
     </main>
   );
 }

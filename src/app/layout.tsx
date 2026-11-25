@@ -3,26 +3,15 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/components/LanguageProvider";
 
-const siteUrl = "https://erbol-portfolio-v2.vercel.app";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: "Erbol Dosanov — Frontend Developer",
+  title: "Erbol Dosanov — Junior Frontend Developer (Notion 3D Portfolio)",
   description:
-    "Erbol Dosanov — Junior Frontend Developer from Tashkent, Uzbekistan. React, Next.js, TypeScript, Tailwind CSS.",
+    "Erbol Dosanov — Junior Frontend Developer from Tashkent, Uzbekistan. Specializing in React, Next.js, TypeScript, Tailwind CSS, and 3D Web interfaces.",
   openGraph: {
-    title: "Erbol Dosanov — Frontend Developer",
+    title: "Erbol Dosanov — Junior Frontend Developer",
     description:
-      "Junior Frontend Developer from Tashkent, Uzbekistan. React, Next.js, TypeScript, Tailwind CSS.",
-    url: siteUrl,
-    siteName: "Erbol Dosanov Portfolio",
+      "Interactive Notion-style 3D Portfolio of Erbol Dosanov. React, Next.js, TypeScript, Tailwind CSS.",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Erbol Dosanov — Frontend Developer",
-    description:
-      "Junior Frontend Developer from Tashkent, Uzbekistan. React, Next.js, TypeScript, Tailwind CSS.",
   },
   icons: {
     icon: "/favicon.svg",
@@ -36,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="font-sans antialiased">
+      <body className="antialiased min-h-screen bg-[var(--notion-bg)] text-[var(--notion-text)]">
         <ThemeProvider>
           <LanguageProvider>{children}</LanguageProvider>
         </ThemeProvider>

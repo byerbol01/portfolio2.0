@@ -1,85 +1,115 @@
-import type { Lang } from "./data";
+import { Lang } from "./data";
+
+export interface DictItem {
+  en: string;
+  ru: string;
+}
+
+export function tr(item: DictItem | { en: string; ru: string }, lang: Lang): string {
+  return item[lang] || item.en;
+}
 
 export const dict = {
   nav: {
-    about: { en: "About", ru: "Обо мне" },
-    stack: { en: "Stack", ru: "Технологии" },
+    workspace: { en: "Workspace", ru: "Воркспейс" },
+    developers: { en: "Developers", ru: "Разработчики" },
     projects: { en: "Projects", ru: "Проекты" },
+    skills: { en: "Skills", ru: "Навыки" },
     experience: { en: "Experience", ru: "Опыт" },
     contact: { en: "Contact", ru: "Контакты" },
   },
-  hero: {
-    role: { en: "Frontend Developer", ru: "Frontend Developer" },
-    tagline: {
-      en: "I build fast, clean React & Next.js interfaces — and I'm always looking for ways to make them feel better to use.",
-      ru: "Создаю быстрые и аккуратные интерфейсы на React и Next.js — и постоянно ищу способы сделать их удобнее.",
-    },
-    viewWork: { en: "View My Work", ru: "Мои проекты" },
-    downloadResume: { en: "Download Resume", ru: "Скачать резюме" },
-    contactMe: { en: "Contact Me", ru: "Связаться" },
-    available: { en: "Available for opportunities", ru: "Открыт для предложений" },
+  header: {
+    statusBadge: { en: "Open to Work", ru: "Ищу работу / проекты" },
+    share: { en: "Share", ru: "Поделиться" },
+    copyLinkSuccess: { en: "Link copied!", ru: "Ссылка скопирована!" },
+    switchLang: { en: "Language", ru: "Язык" },
+    theme: { en: "Theme", ru: "Тема" },
   },
-  about: {
-    title: { en: "About Me", ru: "Обо мне" },
-    summary: {
-      en: "Junior Frontend Developer with around one year of hands-on experience building websites and React applications through independent practice and course projects. Comfortable with JavaScript, TypeScript, React, Next.js and Tailwind CSS. I've worked on product pages, dashboards, API integration and responsive layouts, and I enjoy fixing UI issues and improving how sites work across devices.",
-      ru: "Junior Frontend Developer с опытом около одного года — создаю сайты и React-приложения через самостоятельную практику и учебные проекты. Уверенно работаю с JavaScript, TypeScript, React, Next.js и Tailwind CSS. Делал страницы товаров, дашборды, интеграцию API и адаптивную вёрстку — люблю находить и чинить UI-баги и улучшать работу сайтов на разных устройствах.",
-    },
-    factsTitle: { en: "Quick facts", ru: "Коротко" },
-    facts: {
-      location: { en: "Location", ru: "Локация" },
-      experience: { en: "Experience", ru: "Опыт" },
-      experienceValue: { en: "~1 year, hands-on", ru: "~1 год, практика" },
-      education: { en: "Education", ru: "Образование" },
-      educationValue: { en: "PDP Junior — Frontend", ru: "PDP Junior — Frontend" },
-      languages: { en: "Languages", ru: "Языки" },
-      languagesValue: {
-        en: "Russian (fluent), Uzbek (conversational), English (basic)",
-        ru: "Русский (свободно), узбекский (разговорный), английский (базовый)",
-      },
-    },
-  },
-  stack: {
-    title: { en: "Tech Stack", ru: "Технологии" },
-    subtitle: {
-      en: "Tools and technologies I actually use.",
-      ru: "Инструменты и технологии, с которыми я реально работаю.",
-    },
-  },
-  projects: {
-    title: { en: "Selected Projects", ru: "Избранные проекты" },
-    subtitle: {
-      en: "A few projects from coursework and independent practice.",
-      ru: "Несколько проектов из учебы и самостоятельной практики.",
-    },
-    liveDemo: { en: "Live Demo", ru: "Открыть" },
-    code: { en: "Code", ru: "Код" },
-    details: { en: "View details", ru: "Подробнее" },
-    close: { en: "Close", ru: "Закрыть" },
-    tech: { en: "Technologies", ru: "Технологии" },
-  },
-  timeline: {
-    title: { en: "Experience & Education", ru: "Опыт и образование" },
-  },
-  contact: {
-    title: { en: "Let's Talk", ru: "Давайте общаться" },
-    subtitle: {
-      en: "Open to junior frontend opportunities — reach out any time.",
-      ru: "Открыт для позиций junior-разработчика — пишите в любое время.",
-    },
-    copy: { en: "Copy email", ru: "Скопировать" },
+  properties: {
+    sectionTitle: { en: "Page Properties", ru: "Свойства страницы" },
+    role: { en: "Role", ru: "Роль" },
+    status: { en: "Status", ru: "Статус" },
+    location: { en: "Location", ru: "Локация" },
+    age: { en: "Age", ru: "Возраст" },
+    email: { en: "Email", ru: "Почта" },
+    telegram: { en: "Telegram", ru: "Телеграм" },
+    github: { en: "GitHub", ru: "Гитхаб" },
+    resume: { en: "Resume", ru: "Резюме" },
+    downloadResume: { en: "Download PDF", ru: "Скачать PDF" },
+    copyEmail: { en: "Copy Email", ru: "Скопировать Email" },
     copied: { en: "Copied!", ru: "Скопировано!" },
   },
-  footer: {
-    rights: { en: "All rights reserved.", ru: "Все права защищены." },
-    builtWith: { en: "Built with Next.js & Tailwind CSS.", ru: "Сделано на Next.js и Tailwind CSS." },
+  callouts: {
+    summaryBadge: { en: "Summary", ru: "Обо мне" },
+    summaryTitle: { en: "Frontend Developer Profile", ru: "Профиль Frontend-разработчика" },
+    focusBadge: { en: "Focus", ru: "Фокус" },
+    focusText: {
+      en: "Specializing in React, Next.js, and TypeScript. Passionate about clean architecture, responsive design, and interactive 3D web experiences.",
+      ru: "Специализируюсь на React, Next.js и TypeScript. Уделяю особое внимание чистой архитектуре, адаптивной вёрстке и современным 3D-интерфейсам.",
+    },
   },
-  theme: {
-    light: { en: "Light", ru: "Светлая" },
-    dark: { en: "Dark", ru: "Тёмная" },
+  scene3d: {
+    badge: { en: "Interactive 3D", ru: "Интерактивный 3D" },
+    title: { en: "Notion Monolith 3D", ru: "3D Монолит Notion" },
+    hint: { en: "Move cursor or touch to rotate scene", ru: "Двигайте курсор или коснитесь для вращения" },
+  },
+  projects: {
+    badge: { en: "Database View", ru: "База данных" },
+    title: { en: "Projects Database", ru: "Проекты и разработки" },
+    subtitle: {
+      en: "Curated collection of production applications, coursework projects, and layout recreations.",
+      ru: "Коллекция практических веб-приложений, курсовых проектов и вёрстки по макетам.",
+    },
+    galleryView: { en: "Gallery View", ru: "Галерея" },
+    tableView: { en: "Table View", ru: "Таблица" },
+    filterAll: { en: "All Stack", ru: "Все технологии" },
+    colName: { en: "Project Name", ru: "Название" },
+    colType: { en: "Category", ru: "Категория" },
+    colTech: { en: "Tech Stack", ru: "Стек" },
+    colStatus: { en: "Status", ru: "Статус" },
+    colLinks: { en: "Links", ru: "Ссылки" },
+    openModal: { en: "Inspect Page", ru: "Открыть страницу" },
+    liveDemo: { en: "Live Demo", ru: "Демонстрация" },
+    sourceCode: { en: "Source Code", ru: "Исходный код" },
+    highlights: { en: "Highlights", ru: "Ключевые особенности" },
+    achievements: { en: "Detailed Breakdown", ru: "Что сделано" },
+  },
+  skills: {
+    badge: { en: "Tech Matrix", ru: "Стек технологий" },
+    title: { en: "Skills & Technical Stack", ru: "Навыки и стек" },
+    subtitle: {
+      en: "Core languages, frameworks, UI libraries, and developer tools applied in real code.",
+      ru: "Языки, фреймворки, библиотеки компонентов и инструменты разработки.",
+    },
+  },
+  timeline: {
+    badge: { en: "Journey", ru: "Опыт и учёба" },
+    title: { en: "Education & Practice", ru: "Образование и опыт" },
+    subtitle: {
+      en: "Coursework training, independent milestones, and hands-on developer growth.",
+      ru: "Обучение на курсах, этапы самостоятельной разработки и профессиональный рост.",
+    },
+  },
+  languages: {
+    badge: { en: "Communication", ru: "Языки общения" },
+    title: { en: "Languages", ru: "Владение языками" },
+  },
+  contact: {
+    badge: { en: "Get In Touch", ru: "Связаться со мной" },
+    title: { en: "Let's Build Something Together", ru: "Давайте работать вместе" },
+    subtitle: {
+      en: "I am ready to join your team as a Junior Frontend Developer or collaborate on projects.",
+      ru: "Я открыт к предложениям на позицию Junior Frontend Developer и проектной работе.",
+    },
+    telegramBtn: { en: "Message on Telegram", ru: "Написать в Telegram" },
+    githubBtn: { en: "Check GitHub Profile", ru: "Перейти в GitHub" },
+    downloadResumeBtn: { en: "Download Resume (PDF)", ru: "Скачать резюме (PDF)" },
+  },
+  footer: {
+    builtWith: {
+      en: "Crafted with Next.js, React, TypeScript, Three.js & Tailwind CSS in Notion Aesthetic.",
+      ru: "Создано с любовью на Next.js, React, TypeScript, Three.js и Tailwind CSS в эстетике Notion.",
+    },
+    rights: { en: "All rights reserved.", ru: "Все права защищены." },
   },
 };
-
-export function tr(field: { en: string; ru: string }, lang: Lang): string {
-  return field[lang];
-}
